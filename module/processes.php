@@ -38,6 +38,7 @@ if(!function_exists('show_processes')){
 						$output .= "<tr><th class='col-cbox sorttable_nosort'><div class='cBoxAll'></div></th><th class='sorttable_nosort'>action</th>";
 						foreach($psln as $p) $output .= "<th>".trim(trim(strtolower($p)) ,"\"")."</th>";
 						$output .= "</tr>";
+						//$output = iconv('CP866', 'utf-8', $output);
 					}
 					else{
 						$psln = explode($wexplode, $psa, $wcount);
@@ -67,7 +68,7 @@ if(!function_exists('show_processes')){
 			$colspanAll = $colspan+1;
 			$output .= "<tfoot><tr><td><div class='cBoxAll'></div></td><td colspan=".$colspan." style='text-align:left;'><span class='button' onclick='kill_selected();' style='margin-right:8px;'>kill selected</span><span class='button' onclick='show_processes();'>refresh</span><span class='psSelected'></span></td></tr></tfoot></table>";
 		}
-		return $output;
+		return iconv('CP866', 'utf-8', $output);
 	}
 }
 

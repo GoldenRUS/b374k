@@ -39,7 +39,7 @@ if(!function_exists('info_getinfo')){
 			if($version[0]) $version = $version[0];
 			else $version = "?";
 
-			$res .= "<tr><td>".$k."</td><td>".$version."</td></tr>";
+			$res .= "<tr><td>".$k."</td><td>".iconv('CP866', 'utf-8', $version)."</td></tr>";
 		}
 
 		if(!is_win()){
